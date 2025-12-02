@@ -1,151 +1,136 @@
 {
-  "version": 5,
-  "materials": [
-    {
-      "id": "carbon_steel",
-      "name": "Углеродистая сталь",
-      "type": "steel",
-      "image_url": ""
-    },
-    {
-      "id": "stainless_steel",
-      "name": "Нержавейка",
-      "type": "stainless",
-      "image_url": ""
-    }
-  ],
+  "version": 7,
   "calculators": [
     {
       "id": "mma",
       "name": "MMA (Электрод)",
       "description": "Ручная дуговая сварка. Расчет тока для разных типов электродов.",
-      "enabled": true,
-      "sort_order": 1
+      "enabled": true
     },
     {
       "id": "mig",
       "name": "MIG/MAG (Полуавтомат)",
       "description": "Сварка проволокой в среде защитных газов.",
-      "enabled": false,
-      "sort_order": 2
+      "enabled": false
     },
     {
       "id": "tig",
       "name": "TIG (Аргон)",
       "description": "Аргонодуговая сварка неплавящимся электродом.",
-      "enabled": false,
-      "sort_order": 3
+      "enabled": false
     }
   ],
   "mma_params": {
+    "materials": [
+      {
+        "id": "carbon_steel",
+        "name": "Углеродистая сталь",
+        "type": "steel"
+      },
+      {
+        "id": "stainless_steel",
+        "name": "Нержавейка",
+        "type": "stainless"
+      }
+    ],
     "electrodes": [
       {
         "id": "mp3",
         "name": "МР-3 (Рутил)",
         "description": "Самый популярный бытовой электрод. Легкий поджиг, варит по ржавчине.",
+        "polarity": "AC / DC +/-",
         "base_current_k": 30.0,
         "base_current_b": 0.0,
-        "polarity": "AC / DC +/-",
         "min_diam": 2.0,
-        "max_diam": 5.0,
-        "image_url": ""
+        "max_diam": 5.0
       },
       {
         "id": "ok46",
         "name": "OK 46.00 (ESAB)",
         "description": "Легендарный универсал. Поджиг от касания, минимум брызг, красивый шов.",
+        "polarity": "AC / DC +/-",
         "base_current_k": 33.0,
         "base_current_b": 5.0,
-        "polarity": "AC / DC +/-",
         "min_diam": 1.6,
-        "max_diam": 5.0,
-        "image_url": ""
+        "max_diam": 5.0
       },
       {
         "id": "uoni1355",
         "name": "УОНИ 13/55 (Основной)",
-        "description": "Для ответственных конструкций (трубы, несущие балки). Требует чистый металл.",
+        "description": "Для ответственных конструкций (трубы). Требует чистый металл.",
+        "polarity": "DC+",
         "base_current_k": 35.0,
         "base_current_b": 10.0,
-        "polarity": "DC+",
         "min_diam": 2.0,
-        "max_diam": 5.0,
-        "image_url": ""
+        "max_diam": 5.0
       },
       {
         "id": "lb52u",
         "name": "LB-52U (Япония/Аналог)",
-        "description": "Король трубной сварки. Идеален для корневых швов и провара без пор.",
+        "description": "Король трубной сварки. Идеален для корневых швов.",
+        "polarity": "DC+",
         "base_current_k": 34.0,
         "base_current_b": 5.0,
-        "polarity": "DC+",
         "min_diam": 2.6,
-        "max_diam": 4.0,
-        "image_url": ""
+        "max_diam": 4.0
       },
       {
         "id": "cl11",
         "name": "ЦЛ-11 (Нержавейка)",
-        "description": "Электрод для нержавеющих сталей (Хром-Никель).",
+        "description": "Электрод для нержавейки.",
+        "polarity": "DC+",
         "base_current_k": 25.0,
         "base_current_b": 10.0,
-        "polarity": "DC+",
         "min_diam": 2.0,
-        "max_diam": 4.0,
-        "image_url": ""
+        "max_diam": 4.0
       }
     ],
     "modifiers": {
       "garage_network": 1.15,
       "long_cable": 1.10,
-      "vertical_seam": 0.85,
-      "overhead_seam": 0.90
+      "inverter_efficiency": 1.0
     }
   },
   "library_categories": [
     {
       "id": "basics",
       "name": "Основы сварки",
-      "description": "Техника безопасности и теория",
-      "image_url": "",
-      "sort_order": 1,
+      "icon": "shield",
       "articles": [
         {
           "id": "safety_101",
+          "category": "basics",
           "title": "5 Правил безопасности",
           "preview": "Как сохранить зрение и не сжечь гараж.",
-          "image_url": "",
-          "content_md": "# Главные правила\n\nСварка — это **ультрафиолет**, **температура** и **ток**. Вот что нужно знать:\n\n### 1. Защита глаз\nНикогда не смотри на дугу без маски.\n\n### 2. Одежда\nНикакой синтетики! Она плавится и прилипает к коже.\n\n### 3. Вентиляция\nДым от сварки содержит марганец и цинк. Используй респиратор."
+          "content_md": "# Главные правила\n\nСварка — это **ультрафиолет**, **температура** и **ток**.\n\n### 1. Защита глаз\nНикогда не смотри на дугу без маски.\n\n### 2. Одежда\nНикакой синтетики! Она плавится."
         },
         {
           "id": "polarity_guide",
+          "category": "basics",
           "title": "Прямая и Обратная полярность",
           "preview": "Куда подключать плюс, а куда минус?",
-          "image_url": "",
-          "content_md": "# Куда втыкать кабель?\n\nНа инверторе есть **+** и **-**.\n\n### Обратная полярность (DC+)\n* **Плюс** на электрод, **Минус** на деталь.\n* Для УОНИ, LB-52U.\n\n### Прямая полярность (DC-)\n* **Минус** на электрод, **Плюс** на деталь.\n* Для тонкого металла."
+          "content_md": "# Куда втыкать кабель?\n\n### Обратная полярность (DC+)\n* **Плюс** на электрод.\n\n### Прямая полярность (DC-)\n* **Минус** на электрод."
         }
       ]
     },
     {
       "id": "troubleshooting",
       "name": "Решение проблем",
-      "description": "Почему липнет, брызгает и не варит",
-      "image_url": "",
-      "sort_order": 2,
+      "icon": "warning",
       "articles": [
         {
           "id": "sticky_electrode",
+          "category": "troubleshooting",
           "title": "Почему электрод прилипает?",
           "preview": "Разбор 3 главных причин залипания.",
-          "image_url": "",
-          "content_md": "# Электрод липнет. Что делать?\n\n1. **Мало тока.** Добавь 10-15 Ампер.\n2. **Грязный металл.** Зачисти ржавчину.\n3. **Сырые электроды.** Прокали их."
+          "content_md": "# Электрод липнет\n\n1. Мало тока.\n2. Грязный металл.\n3. Сырые электроды."
         },
         {
           "id": "pores_help",
+          "category": "troubleshooting",
           "title": "Откуда берутся поры?",
           "preview": "Дырки в шве: причины и лечение.",
-          "image_url": "",
-          "content_md": "# Поры в шве\n\nПричины:\n* **Сквозняк.** Сдувает защиту.\n* **Ржавчина.** Металл нужно зачищать.\n* **Длинная дуга.** Держи электрод ближе."
+          "content_md": "# Поры в шве\n\nПричины: сквозняк, ржавчина, длинная дуга."
         }
       ]
     }
