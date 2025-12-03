@@ -1,5 +1,5 @@
 {
-  "version": 7,
+  "version": 8,
   "calculators": [
     {
       "id": "mma",
@@ -21,75 +21,108 @@
     }
   ],
   "mma_params": {
-    "materials": [
-      {
-        "id": "carbon_steel",
-        "name": "Углеродистая сталь",
-        "type": "steel"
-      },
-      {
-        "id": "stainless_steel",
-        "name": "Нержавейка",
-        "type": "stainless"
-      }
-    ],
     "electrodes": [
       {
         "id": "mp3",
         "name": "МР-3 (Рутил)",
-        "description": "Самый популярный бытовой электрод. Легкий поджиг, варит по ржавчине.",
+        "description": "Универсальный. Отлично варит ржавый металл. Не подходит для вертикали 'сверху-вниз'.",
         "polarity": "AC / DC +/-",
-        "base_current_k": 30.0,
-        "base_current_b": 0.0,
-        "min_diam": 2.0,
-        "max_diam": 5.0
+        "diameters": [
+          { "d": 2.0, "min": 40, "max": 80 },
+          { "d": 2.5, "min": 60, "max": 100 },
+          { "d": 3.0, "min": 80, "max": 110 },
+          { "d": 4.0, "min": 110, "max": 150 },
+          { "d": 5.0, "min": 150, "max": 210 }
+        ]
       },
       {
         "id": "ok46",
         "name": "OK 46.00 (ESAB)",
-        "description": "Легендарный универсал. Поджиг от касания, минимум брызг, красивый шов.",
+        "description": "Легендарный универсал. Лучший поджиг, минимум брызг. Идеален для прихваток и новичков.",
         "polarity": "AC / DC +/-",
-        "base_current_k": 33.0,
-        "base_current_b": 5.0,
-        "min_diam": 1.6,
-        "max_diam": 5.0
+        "diameters": [
+          { "d": 2.0, "min": 50, "max": 70 },
+          { "d": 2.5, "min": 60, "max": 100 },
+          { "d": 3.0, "min": 80, "max": 120 },
+          { "d": 4.0, "min": 120, "max": 200 },
+          { "d": 5.0, "min": 180, "max": 260 }
+        ]
+      },
+      {
+        "id": "ozs12",
+        "name": "ОЗС-12 (Рутил)",
+        "description": "Аналог МР-3, но дает меньше дыма и более аккуратный шов. Хорош для тавровых соединений.",
+        "polarity": "AC / DC -",
+        "diameters": [
+          { "d": 2.0, "min": 30, "max": 90 },
+          { "d": 2.5, "min": 50, "max": 110 },
+          { "d": 3.0, "min": 70, "max": 130 },
+          { "d": 4.0, "min": 110, "max": 180 },
+          { "d": 5.0, "min": 150, "max": 220 }
+        ]
       },
       {
         "id": "uoni1355",
         "name": "УОНИ 13/55 (Основной)",
-        "description": "Для ответственных конструкций (трубы). Требует чистый металл.",
+        "description": "Для ответственных конструкций. Требует чистый металл и короткую дугу. Только постоянка (DC+).",
         "polarity": "DC+",
-        "base_current_k": 35.0,
-        "base_current_b": 10.0,
-        "min_diam": 2.0,
-        "max_diam": 5.0
+        "diameters": [
+          { "d": 2.0, "min": 50, "max": 80 },
+          { "d": 2.5, "min": 60, "max": 90 },
+          { "d": 3.0, "min": 80, "max": 110 },
+          { "d": 4.0, "min": 140, "max": 180 },
+          { "d": 5.0, "min": 180, "max": 240 }
+        ]
       },
       {
         "id": "lb52u",
-        "name": "LB-52U (Япония/Аналог)",
-        "description": "Король трубной сварки. Идеален для корневых швов.",
+        "name": "LB-52U (Kobelco)",
+        "description": "Японский электрод для труб и корневых швов. Дает идеальный провар без пор. Только DC+.",
         "polarity": "DC+",
-        "base_current_k": 34.0,
-        "base_current_b": 5.0,
-        "min_diam": 2.6,
-        "max_diam": 4.0
+        "diameters": [
+          { "d": 2.6, "min": 70, "max": 100 },
+          { "d": 3.2, "min": 90, "max": 130 },
+          { "d": 4.0, "min": 140, "max": 180 },
+          { "d": 5.0, "min": 190, "max": 240 }
+        ]
       },
       {
         "id": "cl11",
         "name": "ЦЛ-11 (Нержавейка)",
-        "description": "Электрод для нержавейки.",
+        "description": "Для нержавеющих сталей. Ток ниже, чем для черного металла, чтобы не перегреть. Варить быстро.",
         "polarity": "DC+",
-        "base_current_k": 25.0,
-        "base_current_b": 10.0,
-        "min_diam": 2.0,
-        "max_diam": 4.0
+        "diameters": [
+          { "d": 2.0, "min": 30, "max": 55 },
+          { "d": 2.5, "min": 40, "max": 65 },
+          { "d": 3.0, "min": 50, "max": 90 },
+          { "d": 4.0, "min": 110, "max": 150 },
+          { "d": 5.0, "min": 140, "max": 180 }
+        ]
       }
     ],
-    "modifiers": {
-      "garage_network": 1.15,
-      "long_cable": 1.10,
-      "inverter_efficiency": 1.0
-    }
+    "corrections": {
+      "positions": [
+        { "id": "flat", "name": "Нижнее (Стол)", "factor": 1.0 },
+        { "id": "vertical", "name": "Вертикальное", "factor": 0.85 },
+        { "id": "overhead", "name": "Потолочное", "factor": 0.80 }
+      ],
+      "joints": [
+        { "id": "butt", "name": "Стыковое (Встык)", "factor": 1.0 },
+        { "id": "tee", "name": "Тавровое (Угол)", "factor": 0.90 },
+        { "id": "lap", "name": "Нахлест", "factor": 0.90 }
+      ],
+      "network": {
+        "garage": 1.15,
+        "extension_cord": 1.10
+      }
+    },
+    "thickness_guide": [
+      { "min_t": 0.5, "max_t": 2.0, "rec_d": 2.0 },
+      { "min_t": 2.0, "max_t": 3.0, "rec_d": 2.5 },
+      { "min_t": 3.0, "max_t": 5.0, "rec_d": 3.0 },
+      { "min_t": 5.0, "max_t": 10.0, "rec_d": 4.0 },
+      { "min_t": 10.0, "max_t": 50.0, "rec_d": 5.0 }
+    ]
   },
   "library_categories": [
     {
