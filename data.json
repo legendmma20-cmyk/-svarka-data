@@ -8,10 +8,10 @@
       "enabled": true
     },
     {
-     "id": "mig",
+      "id": "mig",
       "name": "MIG/MAG (Полуавтомат)",
       "description": "Сварка проволокой в среде защитных газов.",
-      "enabled": true, 
+      "enabled": true,
       "sort_order": 2
     },
     {
@@ -20,7 +20,8 @@
       "description": "Аргонодуговая сварка неплавящимся электродом.",
       "enabled": false
     }
-  ],"mig_params": {
+  ],
+  "mig_params": {
     "gases": [
       { "id": "mix_80_20", "name": "Смесь (Ar 80 / CO2 20)", "voltage_correction": 0.0, "is_active_gas": true },
       { "id": "co2", "name": "Углекислота (100% CO2)", "voltage_correction": 2.0, "is_active_gas": true },
@@ -35,7 +36,7 @@
       { "id": "alu", "name": "Алюминий (AlMg/AlSi)", "polarity": "DC+", "allowed_gases": ["argon"] },
       { "id": "ss", "name": "Нержавейка (308 LSi)", "polarity": "DC+", "allowed_gases": ["mix_98_2"] }
     ],
- "modes": [
+    "modes": [
       {
         "material_id": "steel",
         "wire_d": 0.8,
