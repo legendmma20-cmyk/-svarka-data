@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "calculators": [
     {
       "id": "mma",
@@ -8,10 +8,11 @@
       "enabled": true
     },
     {
-      "id": "mig",
+     "id": "mig",
       "name": "MIG/MAG (Полуавтомат)",
       "description": "Сварка проволокой в среде защитных газов.",
-      "enabled": false
+      "enabled": true, 
+      "sort_order": 2
     },
     {
       "id": "tig",
@@ -19,7 +20,81 @@
       "description": "Аргонодуговая сварка неплавящимся электродом.",
       "enabled": false
     }
-  ],
+  ],"mig_params": {
+    "gases": [
+      { "id": "mix_80_20", "name": "Смесь (Ar 80 / CO2 20)", "voltage_correction": 0.0, "is_active_gas": true },
+      { "id": "co2", "name": "Углекислота (100% CO2)", "voltage_correction": 2.0, "is_active_gas": true },
+      { "id": "argon", "name": "Чистый Аргон (100% Ar)", "voltage_correction": 0.0, "is_active_gas": false },
+      { "id": "mix_98_2", "name": "Смесь Inox (Ar 98 / CO2 2)", "voltage_correction": 0.0, "is_active_gas": true },
+      { "id": "no_gas", "name": "Без газа (Флюс)", "voltage_correction": 0.0, "is_active_gas": false }
+    ],
+    "wires": [ 0.8, 1.0, 1.2 ],
+    "materials": [
+      { "id": "steel", "name": "Черная сталь (Св-08Г2С)", "polarity": "DC+", "allowed_gases": ["mix_80_20", "co2"] },
+      { "id": "flux", "name": "Порошковая (E71T-GS)", "polarity": "DC-", "allowed_gases": ["no_gas"] },
+      { "id": "alu", "name": "Алюминий (AlMg/AlSi)", "polarity": "DC+", "allowed_gases": ["argon"] },
+      { "id": "ss", "name": "Нержавейка (308 LSi)", "polarity": "DC+", "allowed_gases": ["mix_98_2"] }
+    ],
+    "modes": [
+      {
+        "material_id": "steel",
+        "wire_d": 0.8,
+        "data": [
+          { "t": 0.8, "v_min": 16.0, "v_max": 18.0, "wfs_min": 2.8, "wfs_max": 4.0, "min_a": 60, "max_a": 100 },
+          { "t": 1.5, "v_min": 17.0, "v_max": 19.0, "wfs_min": 3.5, "wfs_max": 5.0, "min_a": 90, "max_a": 130 },
+          { "t": 2.0, "v_min": 18.0, "v_max": 20.0, "wfs_min": 4.5, "wfs_max": 6.0, "min_a": 120, "max_a": 160 },
+          { "t": 3.0, "v_min": 19.0, "v_max": 22.0, "wfs_min": 5.5, "wfs_max": 7.5, "min_a": 150, "max_a": 200 },
+          { "t": 4.0, "v_min": 21.0, "v_max": 24.0, "wfs_min": 6.5, "wfs_max": 8.5, "min_a": 180, "max_a": 230 },
+          { "t": 5.0, "v_min": 23.0, "v_max": 26.0, "wfs_min": 7.5, "wfs_max": 10.0, "min_a": 220, "max_a": 280 }
+        ]
+      },
+      {
+        "material_id": "steel",
+        "wire_d": 1.0,
+        "data": [
+          { "t": 2.0, "v_min": 18.0, "v_max": 20.0, "wfs_min": 3.5, "wfs_max": 5.0, "min_a": 120, "max_a": 160 },
+          { "t": 3.0, "v_min": 19.0, "v_max": 22.0, "wfs_min": 4.0, "wfs_max": 6.0, "min_a": 140, "max_a": 200 },
+          { "t": 4.0, "v_min": 22.0, "v_max": 25.0, "wfs_min": 5.0, "wfs_max": 7.0, "min_a": 180, "max_a": 240 },
+          { "t": 6.0, "v_min": 24.0, "v_max": 28.0, "wfs_min": 6.0, "wfs_max": 8.5, "min_a": 220, "max_a": 300 },
+          { "t": 8.0, "v_min": 28.0, "v_max": 32.0, "wfs_min": 8.0, "wfs_max": 11.0, "min_a": 280, "max_a": 350 }
+        ]
+      },
+      {
+        "material_id": "flux",
+        "wire_d": 0.8,
+        "data": [
+          { "t": 1.0, "v_min": 15.0, "v_max": 17.0, "wfs_min": 3.0, "wfs_max": 4.5, "min_a": 70, "max_a": 110 },
+          { "t": 2.0, "v_min": 17.0, "v_max": 19.0, "wfs_min": 4.0, "wfs_max": 6.0, "min_a": 100, "max_a": 150 },
+          { "t": 4.0, "v_min": 19.0, "v_max": 22.0, "wfs_min": 5.5, "wfs_max": 8.0, "min_a": 140, "max_a": 200 }
+        ]
+      },
+      {
+        "material_id": "flux",
+        "wire_d": 1.0,
+        "data": [
+          { "t": 3.0, "v_min": 18.0, "v_max": 22.0, "wfs_min": 4.0, "wfs_max": 6.5, "min_a": 140, "max_a": 220 },
+          { "t": 6.0, "v_min": 22.0, "v_max": 26.0, "wfs_min": 6.0, "wfs_max": 9.0, "min_a": 200, "max_a": 300 }
+        ]
+      },
+      {
+        "material_id": "alu",
+        "wire_d": 1.0,
+        "data": [
+          { "t": 1.5, "v_min": 18.0, "v_max": 21.0, "wfs_min": 8.0, "wfs_max": 12.0, "min_a": 100, "max_a": 140 },
+          { "t": 3.0, "v_min": 21.0, "v_max": 24.0, "wfs_min": 10.0, "wfs_max": 15.0, "min_a": 140, "max_a": 190 },
+          { "t": 5.0, "v_min": 23.0, "v_max": 26.0, "wfs_min": 13.0, "wfs_max": 18.0, "min_a": 180, "max_a": 240 }
+        ]
+      },
+      {
+        "material_id": "ss",
+        "wire_d": 0.8,
+        "data": [
+          { "t": 1.0, "v_min": 16.0, "v_max": 18.0, "wfs_min": 3.5, "wfs_max": 5.5, "min_a": 80, "max_a": 130 },
+          { "t": 3.0, "v_min": 19.0, "v_max": 22.0, "wfs_min": 5.0, "wfs_max": 8.0, "min_a": 130, "max_a": 200 }
+        ]
+      }
+    ]
+  },
   "mma_params": {
     "electrodes": [
       {
