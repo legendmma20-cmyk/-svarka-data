@@ -35,7 +35,7 @@
       { "id": "alu", "name": "Алюминий (AlMg/AlSi)", "polarity": "DC+", "allowed_gases": ["argon"] },
       { "id": "ss", "name": "Нержавейка (308 LSi)", "polarity": "DC+", "allowed_gases": ["mix_98_2"] }
     ],
-    "modes": [
+ "modes": [
       {
         "material_id": "steel",
         "wire_d": 0.8,
@@ -92,8 +92,7 @@
           { "t": 1.0, "v_min": 16.0, "v_max": 18.0, "wfs_min": 3.5, "wfs_max": 5.5, "min_a": 80, "max_a": 130 },
           { "t": 3.0, "v_min": 19.0, "v_max": 22.0, "wfs_min": 5.0, "wfs_max": 8.0, "min_a": 130, "max_a": 200 }
         ]
-      }
-
+      },
       {
         "material_id": "steel",
         "wire_d": 0.6,
@@ -132,7 +131,6 @@
           { "t": 8.0, "v_min": 24.0, "v_max": 28.0, "wfs_min": 13.0, "wfs_max": 17.0, "min_a": 220, "max_a": 290 }
         ]
       }
-      
     ]
   },
   "mma_params": {
