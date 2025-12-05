@@ -1,5 +1,5 @@
 {
-  "version": 9,
+  "version": 10,
   "calculators": [
     {
       "id": "mma",
@@ -28,7 +28,7 @@
       { "id": "mix_98_2", "name": "Смесь Inox (Ar 98 / CO2 2)", "voltage_correction": 0.0, "is_active_gas": true },
       { "id": "no_gas", "name": "Без газа (Флюс)", "voltage_correction": 0.0, "is_active_gas": false }
     ],
-    "wires": [ 0.8, 1.0, 1.2 ],
+    "wires": [ 0.6, 0.8, 1.0, 1.2 ],
     "materials": [
       { "id": "steel", "name": "Черная сталь (Св-08Г2С)", "polarity": "DC+", "allowed_gases": ["mix_80_20", "co2"] },
       { "id": "flux", "name": "Порошковая (E71T-GS)", "polarity": "DC-", "allowed_gases": ["no_gas"] },
@@ -93,6 +93,46 @@
           { "t": 3.0, "v_min": 19.0, "v_max": 22.0, "wfs_min": 5.0, "wfs_max": 8.0, "min_a": 130, "max_a": 200 }
         ]
       }
+
+      {
+        "material_id": "steel",
+        "wire_d": 0.6,
+        "data": [
+          { "t": 0.6, "v_min": 15.0, "v_max": 16.5, "wfs_min": 4.0, "wfs_max": 6.0, "min_a": 40, "max_a": 70 },
+          { "t": 0.8, "v_min": 16.0, "v_max": 17.5, "wfs_min": 5.0, "wfs_max": 7.0, "min_a": 50, "max_a": 90 },
+          { "t": 1.0, "v_min": 16.5, "v_max": 18.0, "wfs_min": 6.0, "wfs_max": 8.0, "min_a": 70, "max_a": 110 },
+          { "t": 1.5, "v_min": 17.5, "v_max": 19.5, "wfs_min": 8.0, "wfs_max": 11.0, "min_a": 90, "max_a": 140 }
+        ]
+      },
+      {
+        "material_id": "steel",
+        "wire_d": 1.2,
+        "data": [
+          { "t": 3.0, "v_min": 18.0, "v_max": 21.0, "wfs_min": 3.0, "wfs_max": 4.5, "min_a": 140, "max_a": 200 },
+          { "t": 5.0, "v_min": 22.0, "v_max": 26.0, "wfs_min": 4.5, "wfs_max": 6.5, "min_a": 200, "max_a": 280 },
+          { "t": 8.0, "v_min": 26.0, "v_max": 30.0, "wfs_min": 6.0, "wfs_max": 9.0, "min_a": 260, "max_a": 340 },
+          { "t": 12.0, "v_min": 29.0, "v_max": 34.0, "wfs_min": 8.0, "wfs_max": 12.0, "min_a": 320, "max_a": 400 }
+        ]
+      },
+      {
+        "material_id": "ss",
+        "wire_d": 1.0,
+        "data": [
+          { "t": 2.0, "v_min": 17.5, "v_max": 19.5, "wfs_min": 4.0, "wfs_max": 6.0, "min_a": 110, "max_a": 160 },
+          { "t": 4.0, "v_min": 21.0, "v_max": 24.0, "wfs_min": 6.0, "wfs_max": 8.5, "min_a": 170, "max_a": 240 },
+          { "t": 6.0, "v_min": 23.0, "v_max": 27.0, "wfs_min": 8.0, "wfs_max": 11.0, "min_a": 220, "max_a": 300 }
+        ]
+      },
+      {
+        "material_id": "alu",
+        "wire_d": 1.2,
+        "data": [
+          { "t": 3.0, "v_min": 20.0, "v_max": 23.0, "wfs_min": 8.0, "wfs_max": 11.0, "min_a": 130, "max_a": 180 },
+          { "t": 5.0, "v_min": 22.0, "v_max": 25.0, "wfs_min": 10.0, "wfs_max": 14.0, "min_a": 170, "max_a": 230 },
+          { "t": 8.0, "v_min": 24.0, "v_max": 28.0, "wfs_min": 13.0, "wfs_max": 17.0, "min_a": 220, "max_a": 290 }
+        ]
+      }
+      
     ]
   },
   "mma_params": {
