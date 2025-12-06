@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "calculators": [
     {
       "id": "mma",
@@ -18,7 +18,7 @@
       "id": "tig",
       "name": "TIG (Аргон)",
       "description": "Аргонодуговая сварка неплавящимся электродом.",
-      "enabled": false
+      "enabled": true
     }
   ],
   "mig_params": {
@@ -134,6 +134,71 @@
       }
     ]
   },
+
+"tig_params": {
+    "tungsten_guide": [
+      { "id": "wl20", "color": "Синий (WL-20)", "type": "La (Лантан)", "description": "Универсальный ТОП-выбор. Работает на DC и AC. Долго держит заточку.", "rec_materials": ["Все металлы"] },
+      { "id": "wc20", "color": "Серый (WC-20)", "type": "Ce (Церий)", "description": "Хорош для низких токов и тонкого металла. Легкий поджиг.", "rec_materials": ["Сталь", "Нержавейка", "Титан"] },
+      { "id": "wp", "color": "Зеленый (WP)", "type": "Чистый W", "description": "Только для AC (Алюминий). Формирует шарик на конце. Не подходит для инверторов.", "rec_materials": ["Алюминий (Старые аппараты)"] },
+      { "id": "wt20", "color": "Красный (WT-20)", "type": "Th (Торий)", "description": "Старый стандарт для DC. Радиоактивен! Пыль опасна. Лучшая стабильность на высоких токах.", "rec_materials": ["Нержавейка", "Титан", "Медь"] }
+    ],
+    "materials": [
+      {
+        "id": "dc_steel",
+        "name": "Черная сталь (DC)",
+        "current_type": "DC-",
+        "gas": "Аргон 100%",
+        "is_ac": false,
+        "data": [
+          { "t": 1.0, "min_a": 60, "max_a": 90, "w_d": 1.6, "fill_d": 1.6, "cup": 5, "gas_min": 6, "gas_max": 8, "post_flow": 5 },
+          { "t": 2.0, "min_a": 90, "max_a": 130, "w_d": 2.4, "fill_d": 2.0, "cup": 6, "gas_min": 7, "gas_max": 9, "post_flow": 7 },
+          { "t": 3.0, "min_a": 130, "max_a": 170, "w_d": 2.4, "fill_d": 2.4, "cup": 7, "gas_min": 8, "gas_max": 10, "post_flow": 8 },
+          { "t": 4.0, "min_a": 170, "max_a": 210, "w_d": 3.2, "fill_d": 3.2, "cup": 8, "gas_min": 10, "gas_max": 12, "post_flow": 10 },
+          { "t": 6.0, "min_a": 200, "max_a": 250, "w_d": 3.2, "fill_d": 3.2, "cup": 8, "gas_min": 12, "gas_max": 15, "post_flow": 12 }
+        ]
+      },
+      {
+        "id": "dc_ss",
+        "name": "Нержавейка 304 (DC)",
+        "current_type": "DC-",
+        "gas": "Аргон 100%",
+        "is_ac": false,
+        "data": [
+          { "t": 1.0, "min_a": 50, "max_a": 80, "w_d": 1.6, "fill_d": 1.6, "cup": 6, "gas_min": 7, "gas_max": 9, "post_flow": 6 },
+          { "t": 2.0, "min_a": 80, "max_a": 120, "w_d": 2.4, "fill_d": 2.0, "cup": 7, "gas_min": 8, "gas_max": 10, "post_flow": 8 },
+          { "t": 3.0, "min_a": 120, "max_a": 160, "w_d": 2.4, "fill_d": 2.4, "cup": 7, "gas_min": 9, "gas_max": 11, "post_flow": 10 },
+          { "t": 4.0, "min_a": 160, "max_a": 200, "w_d": 2.4, "fill_d": 3.2, "cup": 8, "gas_min": 10, "gas_max": 12, "post_flow": 12 }
+        ]
+      },
+      {
+        "id": "ac_alu",
+        "name": "Алюминий (AC)",
+        "current_type": "AC ~",
+        "gas": "Аргон 100%",
+        "is_ac": true,
+        "data": [
+          { "t": 1.0, "min_a": 40, "max_a": 70, "w_d": 1.6, "fill_d": 1.6, "cup": 5, "gas_min": 6, "gas_max": 8, "post_flow": 5, "ac_bal": 35, "ac_freq": 120 },
+          { "t": 2.0, "min_a": 70, "max_a": 110, "w_d": 2.4, "fill_d": 2.4, "cup": 6, "gas_min": 8, "gas_max": 10, "post_flow": 7, "ac_bal": 30, "ac_freq": 100 },
+          { "t": 3.0, "min_a": 110, "max_a": 150, "w_d": 2.4, "fill_d": 3.2, "cup": 7, "gas_min": 10, "gas_max": 12, "post_flow": 8, "ac_bal": 30, "ac_freq": 100 },
+          { "t": 4.0, "min_a": 150, "max_a": 190, "w_d": 3.2, "fill_d": 3.2, "cup": 7, "gas_min": 12, "gas_max": 14, "post_flow": 10, "ac_bal": 25, "ac_freq": 80 },
+          { "t": 6.0, "min_a": 190, "max_a": 240, "w_d": 4.0, "fill_d": 4.0, "cup": 8, "gas_min": 14, "gas_max": 16, "post_flow": 12, "ac_bal": 25, "ac_freq": 60 }
+        ]
+      },
+      {
+        "id": "dc_titan",
+        "name": "Титан (DC)",
+        "current_type": "DC-",
+        "gas": "Аргон + Поддув",
+        "is_ac": false,
+        "data": [
+          { "t": 1.0, "min_a": 30, "max_a": 60, "w_d": 1.6, "fill_d": 1.6, "cup": 8, "gas_min": 10, "gas_max": 12, "post_flow": 10 },
+          { "t": 2.0, "min_a": 60, "max_a": 90, "w_d": 2.4, "fill_d": 2.0, "cup": 10, "gas_min": 12, "gas_max": 15, "post_flow": 15 },
+          { "t": 3.0, "min_a": 90, "max_a": 120, "w_d": 2.4, "fill_d": 2.4, "cup": 12, "gas_min": 14, "gas_max": 18, "post_flow": 20 }
+        ]
+      }
+    ]
+  },
+  
   "mma_params": {
     "electrodes": [
       {
