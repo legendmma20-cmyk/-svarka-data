@@ -1,0 +1,43 @@
+{
+  "meta": { "version": 1 },
+  "modules": {
+    "tig": {
+      "is_enabled": true,
+      "smart_rules": {
+        "start_current_ratio": 0.5,
+        "end_current_ratio": 0.2,
+        "min_start_amps": 15,
+        "min_end_amps": 10,
+        "upslope_seconds": 0.5,
+        "downslope_sec_per_100a": 2.0,
+        "post_flow_sec_per_10a": 1.0,
+        "min_post_flow_sec": 5.0
+      },
+      "materials": [
+        {
+          "id": "ss_304",
+          "name": "Stainless Steel 304 (DC)",
+          "type": "DC",
+          "is_ac": false,
+          "gas": "Argon 100%",
+          "points": [
+            { "t": 1.0, "a": 40, "gas_min": 6, "gas_max": 8, "cup": 5 },
+            { "t": 2.0, "a": 90, "gas_min": 7, "gas_max": 9, "cup": 6 },
+            { "t": 3.0, "a": 130, "gas_min": 8, "gas_max": 10, "cup": 7 },
+            { "t": 4.0, "a": 170, "gas_min": 10, "gas_max": 12, "cup": 8 }
+          ]
+        },
+        {
+          "id": "alu_ac",
+          "name": "Aluminum (AC)",
+          "type": "AC",
+          "is_ac": true,
+          "gas": "Argon 100%",
+          "points": [
+            { "t": 2.0, "a": 90, "gas_min": 8, "gas_max": 10, "cup": 6, "ac_bal": 30, "ac_freq": 100 }
+          ]
+        }
+      ]
+    }
+  }
+}
