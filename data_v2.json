@@ -1,5 +1,5 @@
 {
-  "meta": { "version": 1 },
+  "meta": { "version": 2 },
   "modules": {
     "tig": {
       "is_enabled": true,
@@ -22,7 +22,7 @@
           "gas": "Argon 100%",
           "points": [
             { "t": 1.0, "a": 40, "gas_min": 6, "gas_max": 8, "cup": 5 },
-            { "t": 2.0, "a": 90, "gas_min": 7, "gas_max": 9, "cup": 6 },
+            { "t": 2.0, "a": 150, "gas_min": 7, "gas_max": 9, "cup": 6 },
             { "t": 3.0, "a": 130, "gas_min": 8, "gas_max": 10, "cup": 7 },
             { "t": 4.0, "a": 170, "gas_min": 10, "gas_max": 12, "cup": 8 }
           ]
