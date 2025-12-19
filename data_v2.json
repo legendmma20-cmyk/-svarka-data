@@ -1,5 +1,8 @@
 {
-  "meta": { "version": 2 },
+  "meta": {
+    "version": 3,
+    "changelog": "Added Russian names, Steel, Aluminum fixes"
+  },
   "modules": {
     "tig": {
       "is_enabled": true,
@@ -15,26 +18,42 @@
       },
       "materials": [
         {
-          "id": "ss_304",
-          "name": "Stainless Steel 304 (DC)",
+          "id": "dc_steel",
+          "name": "Черная сталь (DC)",
           "type": "DC",
           "is_ac": false,
-          "gas": "Argon 100%",
+          "gas": "Аргон 100%",
           "points": [
             { "t": 1.0, "a": 40, "gas_min": 6, "gas_max": 8, "cup": 5 },
-            { "t": 2.0, "a": 150, "gas_min": 7, "gas_max": 9, "cup": 6 },
+            { "t": 2.0, "a": 90, "gas_min": 7, "gas_max": 9, "cup": 6 },
             { "t": 3.0, "a": 130, "gas_min": 8, "gas_max": 10, "cup": 7 },
-            { "t": 4.0, "a": 170, "gas_min": 10, "gas_max": 12, "cup": 8 }
+            { "t": 5.0, "a": 190, "gas_min": 10, "gas_max": 12, "cup": 8 }
           ]
         },
         {
-          "id": "alu_ac",
-          "name": "Aluminum (AC)",
+          "id": "dc_ss",
+          "name": "Нержавейка 304 (DC)",
+          "type": "DC",
+          "is_ac": false,
+          "gas": "Аргон 100%",
+          "points": [
+            { "t": 1.0, "a": 35, "gas_min": 6, "gas_max": 8, "cup": 5 },
+            { "t": 2.0, "a": 80, "gas_min": 7, "gas_max": 9, "cup": 6 },
+            { "t": 3.0, "a": 120, "gas_min": 8, "gas_max": 10, "cup": 7 },
+            { "t": 4.0, "a": 160, "gas_min": 10, "gas_max": 12, "cup": 8 }
+          ]
+        },
+        {
+          "id": "ac_alu",
+          "name": "Алюминий (AC)",
           "type": "AC",
           "is_ac": true,
-          "gas": "Argon 100%",
+          "gas": "Аргон 100%",
           "points": [
-            { "t": 2.0, "a": 90, "gas_min": 8, "gas_max": 10, "cup": 6, "ac_bal": 30, "ac_freq": 100 }
+            { "t": 1.0, "a": 45, "gas_min": 6, "gas_max": 8, "cup": 5, "ac_bal": 35, "ac_freq": 120 },
+            { "t": 2.0, "a": 90, "gas_min": 8, "gas_max": 10, "cup": 6, "ac_bal": 30, "ac_freq": 100 },
+            { "t": 3.0, "a": 130, "gas_min": 10, "gas_max": 12, "cup": 7, "ac_bal": 30, "ac_freq": 100 },
+            { "t": 5.0, "a": 200, "gas_min": 12, "gas_max": 15, "cup": 8, "ac_bal": 25, "ac_freq": 80 }
           ]
         }
       ]
