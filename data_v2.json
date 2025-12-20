@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 10,
+    "version": 11,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -57,6 +57,48 @@
           ]
         }
       ]
+    },
+"mma": {
+      "is_enabled": true,
+      "corrections": {
+        "flat": 1.0,
+        "vertical": 0.85,
+        "overhead": 0.80
+      },
+      "thickness_guide": [
+        { "max_t": 2.0, "d": 2.0 },
+        { "max_t": 3.0, "d": 2.5 },
+        { "max_t": 5.0, "d": 3.2 },
+        { "max_t": 10.0, "d": 4.0 },
+        { "max_t": 50.0, "d": 5.0 }
+      ],
+      "electrodes": [
+        {
+          "id": "mp3",
+          "name": "МР-3 (Рутил)",
+          "type": "AC/DC",
+          "ranges": [
+            { "d": 2.0, "min": 40, "max": 70 },
+            { "d": 2.5, "min": 60, "max": 90 },
+            { "d": 3.0, "min": 90, "max": 140 },
+            { "d": 4.0, "min": 140, "max": 190 },
+            { "d": 5.0, "min": 180, "max": 240 }
+          ]
+        },
+        {
+          "id": "uoni",
+          "name": "УОНИ 13/55 (Основной)",
+          "type": "DC+",
+          "ranges": [
+            { "d": 2.0, "min": 50, "max": 80 },
+            { "d": 2.5, "min": 70, "max": 100 },
+            { "d": 3.0, "min": 90, "max": 130 },
+            { "d": 4.0, "min": 130, "max": 170 },
+            { "d": 5.0, "min": 170, "max": 210 }
+          ]
+        }
+      ]
     }
+    
   }
 }
