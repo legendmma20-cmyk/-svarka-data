@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 7,
+    "version": 8,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -19,7 +19,7 @@
       "materials": [
         {
           "id": "dc_steel",
-          "name": "Черная сталь2 (DC)",
+          "name": "Черная сталь (DC)",
           "type": "DC",
           "is_ac": false,
           "gas": "Аргон 100%",
