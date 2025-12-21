@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 12,
+    "version": 13,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -100,37 +100,61 @@
       ]
     },
 
-    "mig": {
+ "mig": {
       "is_enabled": true,
+      "gases": [
+        { "id": "mix", "name": "Смесь (Ar 80% / CO2 20%)" },
+        { "id": "co2", "name": "Углекислота (100% CO2)" }
+      ],
+      "wires": [ 0.8, 1.0 ],
       "materials": [
         {
-          "id": "steel_solid",
-          "name": "Черная сталь (Сплошная проволока)",
-          "allowed_gases": ["mix_82_18", "co2"],
+          "id": "steel",
+          "name": "Сталь (Solaris Data)",
+          "allowed_gases": ["mix", "co2"],
           "modes": [
             {
-              "gas_id": "mix_82_18",
+              "gas_id": "mix",
               "wire_d": 0.8,
               "points": [
-                { "t": 0.8, "v": 16.5, "wfs": 4.5, "min_a": 60, "max_a": 80 },
-                { "t": 1.5, "v": 17.5, "wfs": 5.5, "min_a": 90, "max_a": 110 },
-                { "t": 3.0, "v": 20.0, "wfs": 8.5, "min_a": 140, "max_a": 160 }
+                { "t": 0.8, "v": 16.0, "wfs": 3.5, "min_a": 60, "max_a": 70 },
+                { "t": 1.0, "v": 17.0, "wfs": 4.2, "min_a": 75, "max_a": 85 },
+                { "t": 1.5, "v": 18.0, "wfs": 4.8, "min_a": 80, "max_a": 100 },
+                { "t": 2.0, "v": 19.0, "wfs": 5.2, "min_a": 100, "max_a": 110 },
+                { "t": 3.0, "v": 20.0, "wfs": 7.0, "min_a": 130, "max_a": 150 }
               ]
             },
             {
               "gas_id": "co2",
               "wire_d": 0.8,
               "points": [
-                { "t": 0.8, "v": 17.5, "wfs": 5.0, "min_a": 65, "max_a": 85 },
-                { "t": 1.5, "v": 19.0, "wfs": 6.0, "min_a": 95, "max_a": 115 }
+                { "t": 0.8, "v": 16.5, "wfs": 3.8, "min_a": 60, "max_a": 70 },
+                { "t": 1.0, "v": 17.5, "wfs": 4.5, "min_a": 75, "max_a": 85 },
+                { "t": 1.5, "v": 18.5, "wfs": 5.0, "min_a": 80, "max_a": 100 },
+                { "t": 2.0, "v": 19.5, "wfs": 5.5, "min_a": 100, "max_a": 110 },
+                { "t": 3.0, "v": 21.0, "wfs": 7.5, "min_a": 130, "max_a": 150 }
+              ]
+            },
+            {
+              "gas_id": "mix",
+              "wire_d": 1.0,
+              "points": [
+                { "t": 2.0, "v": 19.0, "wfs": 3.5, "min_a": 100, "max_a": 110 },
+                { "t": 3.0, "v": 20.0, "wfs": 5.0, "min_a": 130, "max_a": 150 },
+                { "t": 4.5, "v": 22.0, "wfs": 6.5, "min_a": 150, "max_a": 170 }
+              ]
+            },
+            {
+              "gas_id": "co2",
+              "wire_d": 1.0,
+              "points": [
+                { "t": 2.0, "v": 19.5, "wfs": 3.8, "min_a": 100, "max_a": 110 },
+                { "t": 3.0, "v": 21.0, "wfs": 5.5, "min_a": 130, "max_a": 150 },
+                { "t": 4.5, "v": 23.0, "wfs": 7.0, "min_a": 150, "max_a": 170 }
               ]
             }
           ]
         }
-      ],
-      "gases": [
-        { "id": "mix_82_18", "name": "Смесь (Ar 82% / CO2 18%)" },
-        { "id": "co2", "name": "Углекислота (100% CO2)" }
       ]
     }
     
