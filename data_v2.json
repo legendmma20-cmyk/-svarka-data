@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 14,
+    "version": 15,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -143,7 +143,7 @@
           ]
         }
       ]
-    },
+    }
     
   }
 }
