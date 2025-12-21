@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 11,
+    "version": 12,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -97,6 +97,40 @@
             { "d": 5.0, "min": 170, "max": 210 }
           ]
         }
+      ]
+    },
+
+    "mig": {
+      "is_enabled": true,
+      "materials": [
+        {
+          "id": "steel_solid",
+          "name": "Черная сталь (Сплошная проволока)",
+          "allowed_gases": ["mix_82_18", "co2"],
+          "modes": [
+            {
+              "gas_id": "mix_82_18",
+              "wire_d": 0.8,
+              "points": [
+                { "t": 0.8, "v": 16.5, "wfs": 4.5, "min_a": 60, "max_a": 80 },
+                { "t": 1.5, "v": 17.5, "wfs": 5.5, "min_a": 90, "max_a": 110 },
+                { "t": 3.0, "v": 20.0, "wfs": 8.5, "min_a": 140, "max_a": 160 }
+              ]
+            },
+            {
+              "gas_id": "co2",
+              "wire_d": 0.8,
+              "points": [
+                { "t": 0.8, "v": 17.5, "wfs": 5.0, "min_a": 65, "max_a": 85 },
+                { "t": 1.5, "v": 19.0, "wfs": 6.0, "min_a": 95, "max_a": 115 }
+              ]
+            }
+          ]
+        }
+      ],
+      "gases": [
+        { "id": "mix_82_18", "name": "Смесь (Ar 82% / CO2 18%)" },
+        { "id": "co2", "name": "Углекислота (100% CO2)" }
       ]
     }
     
