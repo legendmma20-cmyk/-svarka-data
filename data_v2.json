@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 15,
+    "version": 16,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -139,6 +139,24 @@
                 { "t": 3.0, "v": 20.0, "wfs": 4.8, "min_a": 130, "max_a": 160 },
                 { "t": 4.0, "v": 22.0, "wfs": 6.0, "min_a": 160, "max_a": 190 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+
+    "library": {
+      "categories": [
+        {
+          "id": "basics",
+          "title": "Основы сварки",
+          "icon": "school",
+          "articles": [
+            {
+              "id": "safety",
+              "title": "Техника безопасности",
+              "description": "Как не сжечь гараж и глаза",
+              "url": "https://raw.githubusercontent.com/legendmma20-cmyk/-svarka-data/main/articles/safety.md"
             }
           ]
         }
