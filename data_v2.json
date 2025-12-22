@@ -1,6 +1,6 @@
 {
   "meta": {
-    "version": 17,
+    "version": 18,
     "changelog": "Added Russian names, Steel, Aluminum fixes"
   },
   "modules": {
@@ -156,7 +156,7 @@
               "id": "safety",
               "title": "Техника безопасности",
               "description": "Как не сжечь гараж и глаза",
-              "url": "https://raw.githubusercontent.com/legendmma20-cmyk/-svarka-data/refs/heads/main/articles/safety.md"
+              "url": "https://raw.githubusercontent.com/legendmma20-cmyk/-svarka-data/main/articles/safety.md"
             }
           ]
         }
